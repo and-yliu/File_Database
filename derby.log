@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon May 29 13:05:22 PDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0188-691d-81fc-00000757d9f0 
+on database directory /Users/andyliu/IdeaProjects/Database/database/forum with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5ca881b5 
+Loaded from file:/Users/andyliu/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=19.0.2+7-44
+user.dir=/Users/andyliu/IdeaProjects/Database
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.15.7
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
