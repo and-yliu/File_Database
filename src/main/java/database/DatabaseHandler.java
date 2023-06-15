@@ -9,11 +9,16 @@ public class DatabaseHandler {
     public static DatabaseHandler handler;
     public static String tableName;
 
+    //Constructor
     public DatabaseHandler(){
         createConnection();
         createTable();
     }
 
+    /**
+     * Get the single instance of the database handler
+     * @return database handler
+     */
     public static DatabaseHandler getHandler(){
         if(handler == null){
             handler = new DatabaseHandler();
@@ -23,6 +28,9 @@ public class DatabaseHandler {
         }
     }
 
+    /**
+     * Create Table with different columns in the database
+     */
     private void createTable() {
         // Name of the folder stored from user input
         String TABLE_NAME = tableName;
@@ -47,6 +55,9 @@ public class DatabaseHandler {
         }
     }
 
+    /**
+     * Create Connection with the database
+     */
     private void createConnection() {
         try{
             conn = DriverManager.getConnection(DB_url);
@@ -55,8 +66,11 @@ public class DatabaseHandler {
         }
     }
 
-
-
+    /**
+     * Execute the action included in the string
+     * @param qu action as a string
+     * @return True if the action is executed or False if it is not executed
+     */
     public boolean execAction(String qu) {
         try{
             stmt = conn.createStatement();
@@ -70,6 +84,11 @@ public class DatabaseHandler {
         return false;
     }
 
+    /**
+     * Create an ResultSet object from the query
+     * @param query String, ex. "SELECT * FROM " + database table name
+     * @return The resultSet or null if the database does not exist
+     */
     public ResultSet execQuery(String query) {
         ResultSet resultSet;
         try{
@@ -83,6 +102,9 @@ public class DatabaseHandler {
         return resultSet;
     }
 
+    /**
+     * Obtain the table names in the database
+     */
     public void showTable() {
         try {
             DatabaseMetaData dmn = conn.getMetaData();
